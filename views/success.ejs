@@ -1,0 +1,83 @@
+<%- include('partials/order-list-header') %>
+<div class="content-div">
+    <br><br><br>
+
+
+    <hr>
+    <h2 style="text-align: center; ">ORDER DATE : <%= orderDate %></h2><br>
+
+    <% if(orders.length == 0){ %>
+    <h3 class="top">(Order list is empty)</h3>
+    <% } else{ %>
+    <h3 class="top">(click on the checkbox to delete the item from current order)</h3>
+    <% } %>
+
+    <!-- <button class=" refresh-btn">Refresh My Orders</button> -->
+    <div class="box">
+
+        <%orders.forEach(function(order) {%>
+
+        <!-- <div style=" background-color: rgb(185, 223, 185); text-align: center;"> 
+            <ol>
+                <li> <h4 >ITEM NAME : <%= order.orderList.itemName %></h4></li>
+
+                <li> <h4 >ITEM PRICE : <%= order.orderList.itemPrice %></h4></li>
+                
+            </ol>
+        </div> -->
+
+
+        <form action="/delete" method="post">
+
+            <div class="item">
+                <!--want it to be order -->
+                <input type="checkbox" value="<%= order._id %>" name="checkbox" onChange="this.form.submit()">
+                <div class="item-name">
+
+                    <h4>ITEM NAME : <span
+                            style="color: green; padding-left: 1rem;"><%= order.orderList.itemName %></span> </h4>
+
+                </div>
+
+                <div class="item-price">
+                    <h4>ITEM PRICE : <span style="color: green; padding-left: 1rem;">
+                            &#x20B9;<%= order.orderList.itemPrice %></span> </h4>
+                </div>
+            </div>
+
+            <input type="hidden" name="customerId" value="<%= order.customerId %>"></input>
+
+        </form>
+
+        <br>
+
+        <%});%>
+
+        <%var sum = 0; %>
+        <%orders.forEach(function(order) {%>
+        <% sum = sum + order.orderList.itemPrice; %>
+        <%});%>
+        <br><br>
+
+        <div style="text-align: center;">
+            <h2>Total Cost : <span style="color: #fc8019"> &#x20B9;<%= sum %></span></h2>
+        </div>
+
+    </div>
+
+    <br><br><br>
+
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!-- <script >
+    $(document).ready(function(){
+        $("button").click(function(){
+            location.reload(true);
+        });
+    });
+    
+</script> -->
+
+<%- include('partials/footer') %>

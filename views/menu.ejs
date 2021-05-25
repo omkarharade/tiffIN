@@ -1,0 +1,470 @@
+<%- include('partials/menu-header') %>
+
+
+<div class="container">
+  <div class="fixed-container">
+    <div class="categories_container">
+      <div class="ct_header">
+        <h2>Categories</h2>
+      </div>
+      <div class="categories">
+        <a href="#starters" class="ct_btn">Starters</a>
+        <a href="#soups" class="ct_btn">Soup</a>
+        <a href="#sabji" class="ct_btn">Sabji</a>
+        <a href="#breads" class="ct_btn">Breads</a>
+        <a href="#rice" class="ct_btn">Rice</a>
+        <a href="#sweets" class="ct_btn">Sweets</a>
+        <a href="#milk-shakes" class="ct_btn">Milk-Shakes</a>
+        <form action="/my-orders" method=post>
+          <input style="display: none;" type="text" name="customerId" value=<%= userPhoneNo %> readonly>
+          <button  type="submit" class= "prev-btn">PreviousOrders</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="flex-container">
+
+
+      <div class="card_container">
+        <h2 id="title" style="text-align: center">
+          Welcome <%= titleName.charAt(0).toUpperCase() + titleName.slice(1) %>
+        </h2>
+        <br />
+        <p style="text-align: center;">@</p>
+        <p id="phoneNo" style="text-align: center"><%= userPhoneNo %></p>
+
+        <section id="starters">
+          <h1>Starters</h1>
+          <div class="card-cat">
+            <div class="card i-1">
+              <p class="card-disc">fresh spinach leaves, green peas and potatoes.</p>
+              <h3 class="card-name">Hara bhara kabab</h3>
+              <p class="click">item0001</p>
+              <button onclick="clickedButton(0)" class="add-btn">
+                Add to cart
+              </button>
+            </div>
+            <div class="card i-2">
+              <p class="card-disc">curdled milk and some citric juices juice.</p>
+              <h3 class="card-name">paneer kabab</h3>
+              <p class="click">item0002</p>
+              <button onclick="clickedButton(1)" class="add-btn">
+                Add to cart
+              </button>
+            </div>
+            <div class="card i-3">
+              <p class="card-disc">a snack cum starter made using mixed vegetables.</p>
+              <h3 class="card-name">Veg kabab</h3>
+              <p class="click">item0003</p>
+              <button onclick="clickedButton(2)" class="add-btn">
+                Add to cart
+              </button>
+            </div>
+            <div class="card i-4">
+              <p class="card-disc">finely grated veggies coated with soft flour.</p>
+              <h3 class="card-name">Dry Manchurian</h3>
+              <p class="click">item0004</p>
+              <button onclick="clickedButton(3)" class="add-btn">
+                Add to cart
+              </button>
+            </div>
+            <div class="card i-5">
+              <p class="card-disc">finely chopped veggies with soft flour dipped in  sauce.</p>
+              <h3 class="card-name">Manchurian with gravy<h3>
+                  <p class="click">item0005</p>
+                  <button onclick="clickedButton(4)" class="add-btn">
+                    Add to cart
+                  </button>
+            </div>
+            <div class="card i-6">
+              <p class="card-disc">French fries,  North American chips.</p>
+              <h3 class="card-name">French Fries</h3>
+              <p class="click">item0006</p>
+              <button onclick="clickedButton(5)" class="add-btn">
+                Add to cart
+              </button>
+            </div>
+          </div>
+        </section>
+        <br><br><br>
+
+        <section id="soups">
+          <h1>Soups</h1>
+          <div class="card-cat">
+            <div class="card i-7">
+              <p class="card-disc">A perfect tomato soup is all about flavor.</p>
+              <h3 class="card-name">Tomato soup</h3>
+              <p class="click">item0007</p>
+              <button onclick="clickedButton(6)" class="add-btn">
+                Add to cart
+              </button>
+            </div>
+            <div class="card i-8">
+              <p class="card-disc">The dietary fibre of the vegetables to maintains normal bowel
+                function.</p>
+              <h3 class="card-name">manchow soup</h3>
+              <p class="click">item0008</p>
+              <button onclick="clickedButton(7)" class="add-btn">
+                Add to cart
+              </button>
+            </div>
+            <div class="card i-9">
+              <p class="card-disc">This soup is highly beneficial for your heart.</p>
+              <h3 class="card-name">veg corn soup</h3>
+              <p class="click">item0009</p>
+              <button onclick="clickedButton(8)" class="add-btn">
+                Add to cart
+              </button>
+            </div>
+          </div>
+        </section>
+        <br><br><br>
+
+
+        <section id="sabji">
+          <h1>Sabji</h1>
+          <div class="card-cat">
+            <div class="card i-10">
+              <p class="card-disc">Mix veg curry </p>
+              <h3 class="card-name">Mix veg</h3>
+              <p class="click">item0010</p>
+              <button onclick="clickedButton(9)" class="add-btn">
+                Add to cart
+              </button>
+            </div>
+            <div class="card i-11">
+              <p class="card-disc">Is characterized by addition of spicy chillies.</p>
+              <h3 class="card-name">veg kolhapuri</h3>
+              <p class="click">item0011</p>
+              <button onclick="clickedButton(10)" class="add-btn">
+                Add to cart
+              </button>
+            </div>
+            <div class="card i-12">
+              <p class="card-disc">is characterized by multiple flavors of spices from kashmir </p>
+              <h3 class="card-name">veg kashmiri</h3>
+              <p class="click">item0012</p>
+              <button onclick="clickedButton(11)" class="add-btn">
+                Add to cart
+              </button>
+            </div>
+            <div class="card-cat">
+              <div class="card i-13">
+                <p class="card-disc">Veg handi are the veggies prepared in Handi under the effect of steam .</p>
+                <h3 class="card-name">veg handi</h3>
+                <p class="click">item0013</p>
+                <button onclick="clickedButton(12)" class="add-btn">
+                  Add to cart
+                </button>
+              </div>
+              <div class="card i-14">
+                <p class="card-disc">made with green peas, mushrooms, onions, tomatoes & spices.</p>
+                <h3 class="card-name">Mushroom mutter</h3>
+                <p class="click">item0014</p>
+                <button onclick="clickedButton(13)" class="add-btn">
+                  Add to cart
+                </button>
+              </div>
+              <div class="card i-15">
+                <p class="card-disc">prepared in Handi under the effect of steam </p>
+                <h3 class="card-name">paneer handi</h3>
+                <p class="click">item0015</p>
+                <button onclick="clickedButton(14)" class="add-btn">
+                  Add to cart
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+        <br><br><br>
+
+        <section id="breads">
+          <h1>Breads</h1>
+          <div class="card-cat">
+            <div class="card i-16">
+              <p class="card-disc">unleavened flatbread and is mostly made using whole wheat</p>
+              <h3 class="card-name">Tandoori roti</h3>
+              <p class="click">item0016</p>
+              <button onclick="clickedButton(15)" class="add-btn">
+                Add to cart
+              </button>
+            </div>
+            <div class="card i-17">
+              <p class="card-disc">Roti usually made with just whole wheat flour and are slightly more rustic.</p>
+              <h3 class="card-name">chapati</h3>
+              <p class="click">item0017</p>
+              <button onclick="clickedButton(16)" class="add-btn">
+                Add to cart
+              </button>
+            </div>
+            <div class="card i-18">
+              <p class="card-disc">leavened flatbread that is fancier and heavier than roti and has a filling inside</p>
+              <h3 class="card-name">Naan</h3>
+              <p class="click">item0018</p>
+              <button onclick="clickedButton(17)" class="add-btn">
+                Add to cart
+              </button>
+            </div>
+          </div>
+        </section>
+        <br><br><br>
+
+        <section id="rice">
+          <h1>Rice</h1>
+          <div class="card-cat">
+            <div class="card i-19">
+              <p class="card-disc">Steamed rice relies on the heat of trapped vapors to soften the grains.</p>
+              <h3 class="card-name">steam rice with dal</h3>
+              <p class="click">item0019</p>
+              <button onclick="clickedButton(18)" class="add-btn">
+                Add to cart
+              </button>
+            </div>
+            <div class="card i-20">
+              <p class="card-disc">flavored Indian rice dish made by cooking basmati rice with ghee and spices</p>
+              <h3 class="card-name">jeera rice</h3>
+              <p class="click">item0020</p>
+              <button onclick="clickedButton(19)" class="add-btn">
+                Add to cart
+              </button>
+            </div>
+            <div class="card i-21">
+              <p class="card-disc">Indian style rice pilaf that is aromatic, delicious, healthy</p>
+              <h3 class="card-name">veg pulao</h3>
+              <p class="click">item0021</p>
+              <button onclick="clickedButton(20)" class="add-btn">
+                Add to cart
+              </button>
+            </div>
+          </div>
+        </section>
+        <br><br><br>
+
+        <section id="sweets">
+          <h1>Sweets</h1>
+          <div class="card-cat">
+            <div class="card i-22">
+              <p class="card-disc">Indian sweet made with milk solids, sugar, rose water & cardamom powder.</p>
+              <h3 class="card-name">gulab jamun</h3>
+              <p class="click">item0022</p>
+              <button onclick="clickedButton(21)" class="add-btn">
+                Add to cart
+              </button>
+            </div>
+            <div class="card i-23">
+              <p class="card-disc">Rasmalai is a Bengali delicacy that is popular among the Sweet Lovers.
+              </p>
+              <h3 class="card-name">Ras malai</h3>
+              <p class="click">item0023</p>
+              <button onclick="clickedButton(22)" class="add-btn">
+                Add to cart
+              </button>
+            </div>
+            <div class="card i-24">
+              <p class="card-disc">It is served as a dessert or along with other sweets.</p>
+              <h3 class="card-name">Rabdi</h3>
+              <p class="click">item0024</p>
+              <button onclick="clickedButton(23)" class="add-btn">
+                Add to cart
+              </button>
+            </div>
+          </div>
+        </section>
+        <br><br><br>
+
+        <section id="milk-shakes">
+          <h1>Milk Shakes</h1>
+          <div class="card-cat">
+            <div class="card i-25">
+              <p class="card-disc"></p>
+              <h3 class="card-name">chocolete milk shake</h3>
+              <p class="click">item0025</p>
+              <button onclick="clickedButton(24)" class="add-btn">
+                Add to cart
+              </button>
+            </div>
+            <div class="card i-26">
+              <p class="card-disc"></p>
+              <h3 class="card-name">apple milk shake</h3>
+              <p class="click">item0026</p>
+              <button onclick="clickedButton(25)" class="add-btn">
+                Add to cart
+              </button>
+            </div>
+            <div class="card i-27">
+              <p class="card-disc"></p>
+              <h3 class="card-name">stroberry milk shake</h3>
+              <p class="click">item0027</p>
+              <button onclick="clickedButton(26)" class="add-btn">
+                Add to cart
+              </button>
+            </div>
+          </div>
+        </section>
+        <br><br><br>
+      </div>
+    </div>
+  </div>
+
+  <div class="selection-bar">
+    <div class="selected-items">
+      <h3 style="margin-right: 4px">
+        No. of selected Items:
+        <span id="item-number" style="color: rgb(218, 149, 23)">0</span>
+      </h3>
+    </div>
+
+
+    <!-- <div class="proceed">
+    <button><p class="arrow"></p></button>  SHUBHAM  compare class (proceed and proceed-div) and (arrow and proceed-btn)-->
+
+    <div class="proceed-div">
+      <button onclick="proceed()" id="proceed-btn-disabled" class="proceed-btn-disabled" disabled>Proceed</button>
+    </div>
+  </div>
+
+
+  <form style="text-align: center; display: none;" id="done" action="/proceed" method="post">
+    <input style="display: none;" type="text" id="fname" name="fname"
+      value=<%= titleName.charAt(0).toUpperCase() + titleName.slice(1) %> readonly>
+    <input style="display: none;" type="text" id="phoneNo" name="userPhoneNo" value=<%= userPhoneNo %> readonly>
+  </form>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <script>
+    function confirm() {
+      var submit = $("#done");
+      submit.submit();
+    }
+  </script>
+
+  <script type="text/javascript">
+    $(document).ajaxStop(function () {
+      alert("All AJAX requests completed");
+    });
+
+    $(document).ready(function () {
+      $.get("/itemAvail", function (availArray, status) {
+        console.log(availArray);
+        console.log(status);
+
+        for (var i = 0; i < availArray.length; i++) {
+
+          if (availArray[i] === false) {
+            $(".add-btn").eq(i).text("Not Available");
+            $(".add-btn").eq(i).css('background-color', 'grey');
+            $(".add-btn").eq(i).attr("disabled", true);
+          }
+        }
+      });
+    });
+
+    var itemsArray = [];
+
+    function clickAudio() {
+      var clickSound = new Audio("./audios/buttonclicked.mp3");
+      clickSound.play();
+    }
+
+    function clickGreen(i) {
+      $(".card").eq(i).toggleClass("card-selected");
+      $(".add-btn").eq(i).toggleClass("add-btn-selected");
+    }
+    // function cardAnimate(i){
+
+    //   $(".add-btn").eq(i).click(function(){
+    //   $(".card").eq(i).animate({bottom: "+=20px"});
+    //   $(".card").eq(i).animate({top: "+=40px"});
+    //   $(".card").eq(i).animate({bottom: "+=20px"});
+
+
+    // });
+
+    // }
+
+    function clickedButton(i) {
+      var item = $(".click").eq(i).text();
+
+      clickGreen(i);
+      // cardAnimate(i);
+      if (itemsArray.includes(item)) {
+        const index = itemsArray.indexOf(item);
+        if (index > -1) {
+          itemsArray.splice(index, 1);
+          $(".add-btn").eq(i).text("Add to cart");
+          clickAudio();
+          $("#item-number").text(itemsArray.length);
+
+          if (itemsArray.length > 0) {
+            $("#proceed-btn-disabled").removeAttr('disabled');
+            $('#proceed-btn-disabled').addClass('proceed-btn').removeClass('proceed-btn-disabled');
+
+          } else {
+            $("#proceed-btn-disabled").prop('disabled', true);
+            $('#proceed-btn-disabled').addClass('proceed-btn-disabled').removeClass('proceed-btn');
+          }
+        }
+        console.log(itemsArray);
+      } else {
+
+        itemsArray.push(item);
+        $(".add-btn").eq(i).text("Added");
+        clickAudio();
+        $("#item-number").text(itemsArray.length);
+
+        if (itemsArray.length > 0) {
+          $("#proceed-btn-disabled").removeAttr('disabled');
+          $('#proceed-btn-disabled').addClass('proceed-btn').removeClass('proceed-btn-disabled');
+
+        } else {
+          $("#proceed-btn-disabled").prop('disabled', true);
+          $('#proceed-btn-disabled').addClass('proceed-btn-disabled').removeClass('proceed-btn');
+        }
+
+        console.log(itemsArray);
+
+      }
+    }
+    const phoneNo = $("#phoneNo").text();
+    console.log(phoneNo);
+
+    function proceed() {
+      // var xhr = $.ajax({
+      //   url: "/server",
+      //   type: "POST",
+      //   data: {
+      //     myArray: itemsArray,
+      //     phoneNo: phoneNo
+      //   },
+      //   success: function (data) {
+      //     if (data.status == "fail") {
+      //       alert("some error occurred");
+      //       console.log("error occurred");
+      //     } else if (data.status == "successfull") {
+      //       alert("got away without error");
+      //       $(".proceed-btn").text("Success");
+      //     }
+      //   }
+      // });
+      // confirm();
+
+      $(document).ready(function () {
+
+        $.post("/server", {
+            myArray: itemsArray,
+            phoneNo: phoneNo
+          },
+          function (data, status) {
+
+            console.log("Data: " + data + "\nStatus: " + status);
+            confirm();
+          }
+        );
+
+      });
+    }
+  </script>
+
+  <%- include('partials/footer') %>

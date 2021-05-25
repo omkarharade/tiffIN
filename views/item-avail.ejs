@@ -1,0 +1,93 @@
+<%- include('partials/item-avail-header') %>
+
+<div class="content-div">
+  <h1>Set Item Availability </h1>
+
+  <% var i = 0;%>
+  <h1 id="length" style="display: none;"><%= items.length %></h1>
+
+
+  <%items.forEach(function(item){%>
+  <div class="items-list">
+    <div class="item">
+      <h3>Item ID : <%= item.itemId%></h3>
+      <h3>Item Name : <%= item.itemName%></h3>
+      <h3>Item Price : <%= item.itemPrice%></h3>
+      <label>Set Availability </label>
+      <label class="switch">
+        <input name="checkbox" class="checkbox" type="checkbox">
+        <span class="slider round">
+          <p class="itemId" style="display: none;"><%= item.itemId %></p>
+          <p class="item-status" style="display: none;"><%= item.itemAvail %></p>
+
+        </span>
+      </label>
+    </div>
+  </div>
+  <br><br><br>
+  <% i++%>
+  <%});%>
+
+
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+<script>
+  const lenght = $(".itemId").length;
+  for (let i = 0; i < lenght; i++) {
+    document.querySelectorAll(".itemId")[i].addEventListener('click', function () {
+      console.log("id");
+      console.log(this);
+    });
+
+  }
+
+  for (let i = 0; i < lenght; i++) {
+    document.querySelectorAll(".round")[i].addEventListener('click', function () {
+      console.log("checkbox");
+
+      const id = document.getElementsByClassName("itemId")[i].innerText;
+      const availStatus = document.getElementsByClassName("item-status")[i].innerText;
+
+
+      $.post("/change-avail-admin", {
+          clickedItemId: id,
+          itemStatus: availStatus
+        },
+        function (data, status) {
+
+          console.log("Status: " + status);
+          console.log(data);
+          alert("Availability of selected item changed successfully");
+
+        }
+      );
+
+    });
+
+  }
+</script>
+
+<script>
+  $(document).ready(function () {
+    $.get("/itemAvail", function (availArray, status) {
+      console.log(availArray);
+      console.log(status);
+
+      for (var i = 0; i < availArray.length; i++) {
+
+        if (availArray[i] === false) {
+          $(".checkbox").eq(i).prop('checked', false);
+        } else {
+          $(".checkbox").eq(i).prop('checked', true);
+
+        }
+      }
+    });
+  });
+</script>
+
+<%- include('partials/footer') %>

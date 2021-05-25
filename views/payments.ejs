@@ -1,0 +1,28 @@
+<%- include('partials/landing-header') %>
+<div>
+    <h3>Payment Method</h3>
+    <label for="cod">Cash On Delivery</label>
+    <input name = "cod"  type="radio">
+    <label for="online">Online</label>
+    <input name="online" type="radio">
+
+    <div>
+        <h2>Details</h2>
+
+        <h4>Card no.</h4>
+        <textarea name="card-number"  cols="16" rows="1"></textarea>
+        <h4>Card Holder Name</h4>
+        <textarea name="cardHolderName"  cols="30" rows="1"></textarea>
+        <h4>expiry Date</h4>
+        <textarea name="expiryMonth"  cols="2" rows="1"></textarea>
+        <textarea name="expiryYear"  cols="2" rows="1"></textarea>
+        <h4>CVV</h4>
+        <textarea name="cvv"  cols="2" rows="1"></textarea>
+    </div>
+
+
+
+
+
+</div>
+<%- include('partials/footer') %>

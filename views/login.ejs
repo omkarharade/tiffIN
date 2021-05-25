@@ -1,0 +1,18 @@
+<%- include('partials/login-header') %>
+
+<div class="signup-div">
+  <div class="form-container">
+      <form class="form" action="/login" method="post">
+        <fieldset>
+          <legend>Login</legend>
+          <label for="">Phone Number</label>
+          <div class="border"><input type="none" class="form-control" name="myPhoneNo" id="phoneNo" placeholder=""></div>
+          <label for="">password</label>
+          <input type="password" class="form-control"  name="password" id="password" placeholder="">
+          <button type="submit" class="submit-button" name="login-button">login</button>
+        </fieldset>
+      </form>
+  </div>
+</div>
+
+<%- include('partials/footer') %>

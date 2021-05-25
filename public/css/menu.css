@@ -1,0 +1,443 @@
+body {
+  overflow-x: hidden;
+
+}
+html{
+  scroll-behavior: smooth;
+}
+
+#title {
+  animation-name: titleAnimate;
+  animation-duration: 1s;
+  animation-delay: 2s;
+}
+
+/* @keyframes example {
+  0%   {transform: translate(0px, 0px);}
+  20%   {transform: translate(10px, 0px);}
+  60%  {transform: translate(-20px, 0px);}
+  100% {transform: translate(10px, 0px);}
+} */
+
+/* @keyframes titleAnimate {
+  0%   {transform: rotate(0deg);}
+  20%   {transform: rotate(20deg);}
+  60%  {transform: rotate(-40deg);}
+  100% {transform: rotate(20deg);}
+} */
+
+@keyframes titleAnimate {
+  0% {
+    transform: translate(20px, 0px);
+  }
+
+  50% {
+    transform: translate(-20px, 0px);
+  }
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  margin: 0 0 0 20vw;
+  position: relative;
+  z-index: 10;
+  padding-bottom: 5rem;
+}
+
+.fixed-container {
+  position: relative;
+  z-index: 5;
+  left: 0;
+}
+
+.categories_container {
+  float: left;
+  position: sticky;
+  z-index: 10;
+  top: 0;
+  padding-top: 5rem;
+  padding-left: 2vw;
+  width: 20vw;
+  background: #2b1e16;
+  height: 100vh;
+  text-align: center;
+}
+
+.ct_header {
+  padding: 0.5rem 0;
+  margin: 1rem 1rem;
+  border-radius: 0.5rem;
+  background: #fc8019;
+}
+
+.categories_container h2 {
+  font-family: "Montserrat", sans-serif;
+  color: #fff;
+  text-shadow: 1px 1px 7px #000;
+}
+
+.categories {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.ct_btn {
+  position: relative;
+  z-index: 5;
+  font-family: "Montserrat", sans-serif;
+  color: #fff;
+  font-size: large;
+  text-decoration: none;
+  margin: 0.8rem 0;
+}
+.prev-btn{
+  padding: 0.5rem;
+  border-color: #fc8019;
+  border-radius: 16px;
+  position: relative;
+  z-index: 5;
+  font-family: "Montserrat", sans-serif;
+  color: #fff;
+  font-size: large;
+  text-decoration: none;
+  margin: 0.8rem 0;
+  background-color: #2b1e16;
+}
+
+.card_container {
+  padding: 1rem 0;
+  padding-right: 5vw;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.card_container h1 {
+  display: block;
+  margin: 1rem 5rem;
+  font-family: "Montserrat", sans-serif;
+}
+
+.card-cat {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.card {
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  background-size: cover;
+  height: 18rem;
+  width: 14rem;
+  border: solid 4px #fff;
+  border-radius: 15px;
+  margin: 1rem 1rem;
+  padding: 1rem;
+  box-shadow: 2px 2px 5px rgb(117, 117, 117);
+}
+
+.card-selected {
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  background-size: cover;
+  height: 18rem;
+  width: 14rem;
+  border: solid 4px rgb(70, 163, 70);
+  border-radius: 15px;
+  margin: 1rem 1rem;
+  padding: 1rem;
+  box-shadow: 2px 2px 5px rgb(117, 117, 117);
+  animation-name: cardAnimate;
+  animation-duration: 1s;
+}
+
+@keyframes cardAnimate {
+  0% {
+    transform: translate(0px, 0px);
+  }
+
+  20% {
+    transform: translate(0px, 10px);
+  }
+
+  60% {
+    transform: translate(0px, -20px);
+  }
+
+  100% {
+    transform: translate(0px, 10px);
+  }
+}
+
+.card:hover {
+  text-align: center;
+  display: block;
+  background-size: cover;
+  height: 18rem;
+  width: 14rem;
+  border: solid 4px #fca258;
+  border-radius: 15px;
+  margin: 1rem 1rem;
+  padding: 1rem;
+  box-shadow: 2px 2px 5px rgb(117, 117, 117);
+  transition: all 500ms ease-out;
+  background-image: url("/images/grey-gradient.jpg");
+}
+
+.card-selected:hover {
+  text-align: center;
+  display: block;
+  background-size: cover;
+  height: 18rem;
+  width: 14rem;
+  border: solid 4px rgb(70, 163, 70);
+  border-radius: 15px;
+  margin: 1rem 1rem;
+  padding: 1rem;
+  box-shadow: 2px 2px 5px rgb(117, 117, 117);
+  transition: all 500ms ease-out;
+  background-image: url("/images/grey-gradient.jpg");
+}
+
+.card .card-disc {
+  display: none;
+}
+
+.card:hover .card-disc {
+  display: block;
+  font-family: "Montserrat", sans-serif;
+  color: #fff;
+  margin: 3rem 0.2rem;
+}
+
+.card .card-name {
+  display: block;
+  color: white;
+  background-color:#5e4633;
+  border-radius: 12px;
+  min-height: 2rem;
+  padding-top: 0.3rem;
+}
+
+.card:hover .card-name {
+  display: none;
+}
+
+.card .add-btn {
+  display: none;
+}
+
+.card:hover .add-btn {
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  background-color: #fc8019;
+  padding: 0.5rem 0.5rem;
+  margin: 1rem 1rem;
+  width: 80%;
+  border-radius: 1rem;
+}
+
+.card:hover .add-btn-selected {
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  background-color: rgb(70, 163, 70);
+  padding: 0.5rem 0.5rem;
+  margin: 1rem 1rem;
+  width: 80%;
+  border-radius: 1rem;
+}
+
+.card:hover .add-btn:hover {
+  color: #fff;
+  background-color: #fc8019;
+  border-color: #fc8019;
+  text-shadow: 3px 1px 16px rgb(102, 102, 102);
+  transition: text-shadow 300ms ease-in;
+}
+
+.card:hover .add-btn-selected:hover {
+  color: #fff;
+  background-color: rgb(70, 163, 70);
+  border-color: rgb(70, 163, 70);
+  text-shadow: 3px 1px 16px rgb(102, 102, 102);
+  transition: text-shadow 300ms ease-in;
+}
+
+
+
+.click {
+  opacity: 0;
+}
+
+.selection-bar {
+  display: flex;
+  width: 100vw;
+  min-height: 4rem;
+  background-color: #f7e1d1;
+  position: sticky;
+  z-index: 30;
+  bottom: 0;
+}
+
+.proceed-div {
+  width: 50%;
+  position: inherit;
+  right: 2rem;
+}
+
+.selected-items {
+  position: relative;
+  left: 2rem;
+  width: 50%;
+}
+.selected-items h3{
+  padding-top: 0.6rem;
+}
+
+.proceed-btn {
+  text-decoration: none;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  background-color: #fc8019;
+  padding: 0.5rem 0.5rem;
+  margin: 1rem auto;
+  width: 8rem;
+  border-radius: 1rem;
+}
+
+.proceed-btn:hover {
+  background-color: rgb(70, 163, 70);
+}
+
+.proceed-btn-disabled {
+  text-decoration: none;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  background-color: grey;
+  padding: 0.5rem 0.5rem;
+  margin: 1rem auto;
+  width: 8rem;
+  border-radius: 1rem;
+}
+
+.i-1 {
+  background-image: url("/images/menu images/img-1.jpg");
+}
+
+.i-2 {
+  background-image: url("/images/menu images/img-2.jpg");
+}
+
+.i-3 {
+  background-image: url("/images/menu images/img-3.jpg");
+}
+
+.i-4 {
+  background-image: url("/images/menu images/img-4.jpg");
+}
+
+.i-5 {
+  background-image: url("/images/menu images/img-5.jpg");
+}
+
+.i-6 {
+  background-image: url("/images/menu images/img-6.jpg");
+}
+
+.i-7 {
+  background-image: url("/images/menu images/img-7.jpg");
+}
+
+.i-8 {
+  background-image: url("/images/menu images/img-8.jpg");
+}
+
+.i-9 {
+  background-image: url("/images/menu images/img-9.jpg");
+}
+
+.i-10 {
+  background-image: url("/images/menu images/img-10.jpg");
+}
+
+.i-11 {
+  background-image: url("/images/menu images/img-11.jpg");
+}
+
+.i-12 {
+  background-image: url("/images/menu images/img-12.jpg");
+}
+
+.i-13 {
+  background-image: url("/images/menu images/img-13.jpg");
+}
+
+.i-14 {
+  background-image: url("/images/menu images/img-14.jpg");
+}
+
+.i-15 {
+  background-image: url("/images/menu images/img-15.jpg");
+}
+
+.i-16 {
+  background-image: url("/images/menu images/img-16.jpg");
+}
+
+.i-17 {
+  background-image: url("/images/menu images/img-17.jpg");
+}
+
+.i-18 {
+  background-image: url("/images/menu images/img-18.jpg");
+}
+
+.i-19 {
+  background-image: url("/images/menu images/img-19.jpg");
+}
+
+.i-20 {
+  background-image: url("/images/menu images/img-20.png");
+}
+
+.i-21 {
+  background-image: url("/images/menu images/img-21.jpg");
+}
+
+.i-22 {
+  background-image: url("/images/menu images/img-22.jpg");
+}
+
+.i-23 {
+  background-image: url("/images/menu images/img-23.jpg");
+}
+
+.i-24 {
+  background-image: url("/images/menu images/img-24.jpg");
+}
+
+.i-25 {
+  background-image: url("/images/menu images/img-25.jpg");
+}
+
+.i-26 {
+  background-image: url("/images/menu images/img-26.jpg");
+}
+
+.i-27 {
+  background-image: url("/images/menu images/img-27.jpg");
+}

@@ -1,0 +1,130 @@
+*{
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+#title{
+  animation-name: titleAnimate ;
+  animation-duration: 1s;
+  animation-delay: 2s;
+}
+
+@keyframes titleAnimate {
+  0%   {transform: translate(20px, 0px);}
+ 
+  50% {transform: translate(-20px, 0px);}
+}
+
+/* @keyframes titleAnimate {
+  0%   {transform: rotate(0deg);}
+  20%   {transform: rotate(20deg);}
+  60%  {transform: rotate(-40deg);}
+  100% {transform: rotate(20deg);}
+} */
+
+
+
+.main_container{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 3rem 5rem;
+  text-align: center;
+  background: #fff;
+}
+
+.main_container h1{
+  margin: 1rem 0;
+  display: block;
+  width: 100%;
+}
+
+.card{
+  background-image: url("/images/menu items/1.jpeg");
+  background-size: cover;
+  height: 20rem;
+  width: 15rem;
+  border: solid 0.4rem;
+  box-shadow: 1px 1px 10px rgb(77, 77, 77);
+  border-color: crimson;
+  border-radius: 1rem;
+  margin: 1rem 2rem;
+  padding: 1rem;
+  justify-content: space-around;
+}
+
+.card-selected{
+  background-image: url("/images/menu items/1.jpeg");
+  background-size: cover;
+  height: 20rem;
+  width: 15rem;
+  border: solid 0.4rem;
+  box-shadow: 1px 1px 10px rgb(77, 77, 77);
+  border-color: rgb(70, 163, 70);
+  border-radius: 1rem;
+  margin: 1rem 2rem;
+  padding: 1rem;
+  justify-content: space-around;
+}
+
+.card img{
+  width: 100%;
+  height: auto;
+}
+
+.card:hover{
+  border: solid 0.4rem;
+  border-color: cyan;
+  background: coral;
+  border-radius: 1rem;
+  margin: 1rem 1rem;
+  padding: 1rem;
+  transition: border 300ms ease;  
+}
+.click{
+  opacity:0;
+}
+
+.selection-bar{
+  display: flex;
+    width: 100vw; 
+    min-height: 4rem;
+    background-color: #f8f4f1;
+    position:fixed;
+    bottom: 0;
+}
+
+.proceed-div{
+  width: 50%;
+  position:inherit;
+  right: 2rem;
+  
+}
+
+.selected-items{
+  position: relative;
+  left: 2rem;
+  width:50%;
+}
+.proceed-btn{
+  text-decoration: none;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #fc8019;
+  padding: 0.5rem 0.5rem;
+  margin: 1rem auto;
+  width: 8rem;
+  border-radius: 1rem;
+
+}
+
+.proceed-btn:hover{
+  text-decoration: none;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  background-color: rgb(70, 163, 70);
+  padding: 0.5rem 0.5rem;
+  margin: 1rem auto;
+  width: 8rem;
+  border-radius: 1rem;
+
+}

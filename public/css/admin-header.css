@@ -1,0 +1,96 @@
+.body {
+  font-family: "Montserrat", sans-serif;
+}
+
+button {
+  font-family: "Montserrat", sans-serif;
+  background-color: #fc8019;
+  margin-top: 1.5rem;
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 1.5rem 2rem;
+  cursor: pointer;
+  border-radius: 16px;
+  height: 3rem;
+}
+
+button:hover {
+  background-color: rgb(70, 163, 70);
+}
+
+.content-div {
+  min-height: 80vh;
+}
+
+.content-div h1,
+p {
+  padding: 2rem 0 0 0;
+  text-align: center;
+}
+
+.all-orders {
+  border-radius: 16px;
+  margin: 3rem 5rem;
+  background-color: #f8cba8;
+  padding-left: 3rem;
+  padding-top: 3rem;
+}
+
+.custom-date-orders {
+  border-radius: 16px;
+  background-color: #f8cba8;
+  padding-left: 3rem;
+  padding-top: 3rem;
+  margin: 3rem 5rem;
+}
+
+.custom-date-orders label {
+  font-size: large;
+  font-family: "Montserrat", sans-serif;
+  color: #fc8019;
+  margin-left: 1rem;
+}
+
+.custom-date-orders input {
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  height: 2rem;
+  width: auto;
+}
+
+.custom-date-orders ::-webkit-input-placeholder {
+  text-align: center;
+}
+
+.all-orders button:hover {
+  background-color: rgb(70, 163, 70);
+}
+
+.item-availability {
+  border-radius: 16px;
+  background-color: #f8cba8;
+  padding-left: 3rem;
+  padding-top: 3rem;
+
+  margin: 3rem 5rem;
+}
+
+.order-list {
+  border-radius: 16px;
+  margin: 3rem 10rem;
+  background-color: #f8cba8;
+  padding-left: 3rem;
+  padding-top: 3rem;
+}
+
+.order-list h2 {
+  padding: 1.5rem 0;
+}
+
+.order-list h2:last-child {
+  padding: 1.5rem 0 3rem 0;
+}

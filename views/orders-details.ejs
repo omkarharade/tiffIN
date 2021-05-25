@@ -1,0 +1,29 @@
+<%- include('partials/admin-header') %>
+<div class="content-div">
+    <h1 style="color: #fc8019">Order Details</h1>
+
+
+
+    <%for(var i = 0; i < customerCount; i++){%>
+    <%var totalCost = 0;%>
+    <div class="order-list">
+        <h2>Customer Name : <%=customers[i].name%></h2>
+        <h2>Contact No. : <%=customers[i].phoneNo%></h2>
+        <h2>Address : <%=customers[i].address%></h2>
+
+
+        <%for(var j = 0; j < foundOrders[i].length; j++){%>
+        <h3>Item Name : <%= foundOrders[i][j].orderList.itemName%></h3>
+        <h3>Item Price : <span style="color: #fc8019"><%= foundOrders[i][j].orderList.itemPrice%></span></h3>
+        <br>
+        <%totalCost = totalCost + foundOrders[i][j].orderList.itemPrice;%>
+
+        <%}%>
+            <h2>Total Cost: <span style="color: #fc8019">&#x20B9;<%=totalCost%></span></h2>
+    </div>
+
+    <%}%>
+</div>
+
+
+<%- include('partials/footer') %>

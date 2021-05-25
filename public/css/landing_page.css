@@ -1,0 +1,102 @@
+body{
+  overflow-x: hidden;
+}
+
+.container{
+  padding: 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.container_1{
+  display:flex;
+  flex-wrap: nowrap;
+  height: auto;
+}
+
+.c_1_l{
+  padding: 10rem 10vw 0 10vw;
+  background-image: url("/images/vegetables.jpeg");
+  background-color: #cccccc;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.c_1_l_header{
+  margin: 10rem 20vw;
+  min-width: 30rem;
+  font-family: 'Montserrat', sans-serif;
+  display: block;
+}
+
+.c_1_l_header h2{
+  font-family: 'Montserrat', sans-serif;  
+  color: #fc8019;
+  margin: 1rem 0;
+  text-shadow: 1px 1px 3px #000;
+}
+
+.c_1_l_header h3{
+  font-family: 'Montserrat', sans-serif;
+  color: #2b1e16;
+  text-shadow: 1px 1px 3px #000;
+}
+
+.explore_menu a{
+  text-decoration: none;
+  display: inline-block;
+  background-color: #fc8019;
+  margin: 1rem 0;
+  border: 2px solid;
+  border-radius: 7px;
+  line-height: 35px;
+  letter-spacing: 1px;
+  text-shadow: 3px 1px 10px #000;
+  border-color: #fc8019;
+  color: #fff;
+  transition: color .4s ease-out;
+  transition: border-color .4 ease-out;
+  padding: 0 1.7rem;
+  height: 40px;
+  width: auto;
+}
+
+.explore_menu a:hover{
+  color: #fff;
+  background-color: #fc8019;
+  border-color: #fc8019;
+  text-shadow: 3px 1px 16px rgb(102, 102, 102);
+  transition: text-shadow 300ms ease-in;
+}
+
+.container_2{
+  display: flex;
+  justify-content: space-around;
+  padding: 0 10vw 3rem 10vw;
+  background-color: #2b1e16;
+}
+
+.container_2 .features img{
+  margin: 0 25%;
+  height: 200px;
+}
+
+.f_t{
+  color:#fc8019;
+  margin: 0.5rem 3rem;
+  text-shadow: 1px 1px 4px #000;
+}
+
+.f_d{
+  color: #fff;
+  margin: 0.5rem 3rem;
+  text-shadow: 1px 1px 4px #000;
+}
+
+.container_3{
+  height: 80vh;
+  background: rgb(224, 224, 224);
+}

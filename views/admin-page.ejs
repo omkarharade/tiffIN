@@ -1,0 +1,69 @@
+<%- include('partials/admin-header') %>
+
+<div class="content-div">
+
+    <h1>Welcome Admin <%= adminName.charAt(0).toUpperCase() + adminName.slice(1) %></h1>
+    <p>@<%=adminPhoneNo%></p>
+
+
+
+    <div class="all-orders">
+        <h2>Click on the button to see the orders</h2>
+        <form action="/admin-view" method="POST">
+
+            <button type="submit">See All Orders</button>
+        </form>
+    </div>
+
+
+    <div class="custom-date-orders">
+        <h2>Get Orders By Date</h2>
+        <form action="/custom-date-orders-details" method="POST">
+            <label> dd </label>
+            <input type="text" name="dd" maxlength="2" size="2" placeholder="DD">
+
+            <label> mm </label>
+            <input type="text" name="mm" maxlength="2" size="2" placeholder="MM">
+
+            <label> yyyy </label>
+            <input type="text" name="yyyy" minlength="4" maxlength="4" size="4" placeholder="YYYY">
+
+            <button id='register' type="submit" disabled="disabled">See All
+                Orders</button>
+        </form>
+    </div>
+
+    <div class="item-availability">
+        <h2>Set Current Item Availability</h2>
+        <form action="/set-item-avail" method="POST">
+            <button type="submit">Set Item Availability</button>
+        </form>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script>
+    (function () {
+        $('form > input').keyup(function () {
+
+            var empty = false;
+            $('form > input').each(function () {
+                if ($(this).val() == '') {
+                    empty = true;
+                }
+            });
+
+            if (empty) {
+                $('#register').attr('disabled',
+                    'disabled'
+                ); // updated according to http://stackoverflow.com/questions/7637790/how-to-remove-disabled-attribute-with-jquery-ie
+            } else {
+                $('#register').removeAttr(
+                    'disabled'
+                ); // updated according to http://stackoverflow.com/questions/7637790/how-to-remove-disabled-attribute-with-jquery-ie
+            }
+        });
+    })()
+</script>
+<%- include('partials/footer') %>
