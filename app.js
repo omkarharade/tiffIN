@@ -190,7 +190,7 @@ app.post("/admin-view", async function (req, res) {
     {
       role: "customer",
     },
-    function (err, foundUsers) {
+    async function (err, foundUsers) {
       if (err) {
         console.log(err);
       } else {
@@ -199,13 +199,14 @@ app.post("/admin-view", async function (req, res) {
       }
     }
   );
+  console.log(customers);
 
   for (var i = 0; i < customers.length; i++) {
     await Order.find(
       {
         customerId: customers[i].phoneNo,
       },
-      function (err, foundOrders) {
+      async function (err, foundOrders) {
         if (err) {
           console.log(err);
         } else {
@@ -244,7 +245,7 @@ app.post("/custom-date-orders-details", async function (req, res) {
       {
         role: "customer",
       },
-      function (err, foundUsers) {
+      async function (err, foundUsers) {
         if (err) {
           console.log(err);
         } else {
@@ -254,13 +255,15 @@ app.post("/custom-date-orders-details", async function (req, res) {
       }
     );
 
+    console.log(ordersDate);
+
     for (var i = 0; i < customers.length; i++) {
       await Order.find(
         {
           customerId: customers[i].phoneNo,
           orderDate: ordersDate,
         },
-        function (err, foundOrders) {
+        async function (err, foundOrders) {
           if (err) {
             console.log(err);
           } else {
@@ -312,60 +315,6 @@ app.post("/server", async function (req, res) {
       );
     }
 
-    //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-    // error code starts
-
-    // this code is having a problem of save() being asynchronous see afterwards
-
-    // const order = new Order({
-    //   customerId : phoneNo
-    // });
-
-    // for(var i = 0 ; i < resArray.length; i++ ){
-
-    //   await Item.findOne({itemId : {$eq :resArray[i]} },  function (err, foundItem) {
-    //     if (err){
-    //         console.log(err);
-    //     }
-    //     else{
-
-    //         // itemsObj.push(foundItem);
-    //         await order.orderList.push(foundItem);
-    //         console.log(foundItem);
-    //         console.log("item found ");
-    //         console.log(i);
-    //     }
-    //  });
-
-    // }
-    //  order.save( function(err, orderData){
-    //   if (err){
-    //     console.log(err);
-
-    //   }else{
-    //     console.log(orderData);
-    //     console.log("this is the data which is having error");
-    //   }
-    // });
-
-    //  check later code ends
-    //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-    // const orderSchema = new mongoose.Schema({
-    //   orderId: mongoose.Schema.Types.ObjectId,
-    //   customerId: String,
-    //   orderDate: { type: Date, default: Date.now },
-    //   orderList: [itemSchema],
-    // });
-
-    // Order.insertMany(orders , function(err){
-    //   if(err)
-    //   console.log(err);
-    //   else
-    //   console.log("Successfully saved default items to DB.");
-    // });
-
     console.log("status -> success");
     res.send({
       status: "successfull",
@@ -385,21 +334,7 @@ app.post("/proceed", function (req, res) {
   const customerId = req.body.userPhoneNo;
 
   const currentDate = date();
-  //   let found =  Order.find(
-  //     {
-  //       customerId : customerId,
-  //       orderDate : currentDate
-  //     },
-  //      function (err, foundOrder) {
-  //       if (err) {
-  //         console.log(err);
-  //       } else {
-  //         console.log("this is the found order");
-  //         console.log(foundOrder);
-  //         ordersArray = foundOrder;
 
-  //       }
-  // }).then(res.render("success", {cusName: req.body.fname, orders: ordersArray, orderDate : currentDate}));
   Order.find(
     {
       customerId: customerId,
@@ -417,31 +352,6 @@ app.post("/proceed", function (req, res) {
       }
     }
   );
-
-  //  function getOrdersPromise(customerId, currentDate){
-  //   var promise =  Order.find(
-  //     {
-  //       customerId : customerId,
-  //       orderDate : currentDate
-  //     }).exec();
-  //   return promise;
-  // }
-
-  // var promise = getOrdersPromise(customerId, currentDate);
-  // console.log(promise);
-  // promise.then(function(foundOrders){
-  //   console.log(foundOrders);
-  //   res.render("success", {cusName: req.body.fname, orders: foundOrders, orderDate : currentDate});
-  //    });
-
-  // await Order
-  //    .find({orderDate : date() },function(err, orderDetails){
-  //      if(err){
-  //        console.log(err);
-  //      }else{
-  //       res.render("success", {cusName: req.body.fname, orders: orderDetails});
-  //      }
-  //    });
 });
 app.get("/itemAvail", async function (req, res) {
   var availArray = [];
@@ -511,7 +421,7 @@ app.get("/:customerId", function (req, res) {
 app.post("/set-item-avail", async function (req, res) {
   var items;
   console.log("inside item avail");
-  await Item.find({}, function (err, foundItems) {
+  await Item.find({}, async function (err, foundItems) {
     if (err) {
       console.log(err);
     } else {
